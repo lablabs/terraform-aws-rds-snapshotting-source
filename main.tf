@@ -46,7 +46,10 @@ resource "aws_iam_policy" "this" {
         "rds:DescribeDBClusterSnapshots",
         "rds:DescribeDBClusterSnapshotAttributes",
         "rds:ModifyDBClusterSnapshotAttribute",
-        "rds:CopyDBClusterSnapshot"
+        "rds:CopyDBClusterSnapshot",
+        "rds:AddTagsToResource",
+        "rds:DeleteDBClusterSnapshot",
+        "rds:ListTagsForResource"
       ],
       "Resource": ["*"]
     },
@@ -90,6 +93,7 @@ resource "aws_lambda_function" "this" {
       CLUSTER_ID        = var.db_cluster_name
       TARGET_ACCOUNT_ID = var.target_account
       SNS_TOPIC_ARN     = var.target_sns_topic_arn
+      RETENTION_DAYS    = var.db_snapshot_retention_days
     }
   }
 }

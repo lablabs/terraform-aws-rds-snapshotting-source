@@ -5,3 +5,4 @@ variable "lambda_schedule" {
 }
 variable "region" {}
 variable "target_account" {}
+variable "db_snapshot_retention_days" {}
