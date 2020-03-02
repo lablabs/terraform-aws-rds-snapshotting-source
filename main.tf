@@ -71,7 +71,7 @@ resource "aws_iam_role_policy_attachment" "this" {
 }
 
 resource "aws_cloudwatch_log_group" "this" {
-  name              = "/aws/lambda/local.name"
+  name              = "/aws/lambda/${local.name}"
   retention_in_days = 14
 }
 
