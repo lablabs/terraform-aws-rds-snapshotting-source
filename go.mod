@@ -1,4 +1,4 @@
-module rds-snapshotting-source
+module github.com/lablabs/aws-rds-snapshotting-source
 
 go 1.23
 
