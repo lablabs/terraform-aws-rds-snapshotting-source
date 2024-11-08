@@ -61,6 +61,20 @@ No output.
 
 Feel free to create an issue in this repository if you have questions, suggestions or feature requests.
 
+### Building lambda package
+
+- use `asdf` to install necessary go version
+- compile go code
+- zip compiled code and push to the repository
+
+```bash
+asdf install
+
+GOARCH=amd64 GOOS=linux go build -o bootstrap main.go
+
+zip lambda.zip bootstrap
+```
+
 ## License
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
